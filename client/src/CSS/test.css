@@ -1,0 +1,74 @@
+.testSlider {
+  width: 28%;
+  float: left;
+  margin-left: 8rem;
+  margin-top: 2rem;
+  border: 2px solid;
+  display: inline;
+  overflow: hidden;
+}
+
+.testDetail {
+  float: right;
+  margin-right: 6rem;
+  margin-top: 4rem;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: aliceblue;
+  transition: 10ms;
+}
+
+.swiper-pagination {
+  color: aliceblue;
+}
+
+.swiper-container-horizontal
+  > .swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  margin: 0 4px;
+  background-color: aliceblue;
+}
+
+#popup {
+  display: none;
+}
+
+.active {
+  display: block !important;
+}
+
+.showpopup {
+  width: 1024px;
+  height: 400px;
+  background-color: aliceblue;
+  position: absolute;
+  top: 150px;
+  z-index: 999;
+}

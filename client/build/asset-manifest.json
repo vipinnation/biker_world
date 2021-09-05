@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.19c930f1.chunk.css",
+    "main.js": "/static/js/main.d9e800b2.chunk.js",
+    "main.js.map": "/static/js/main.d9e800b2.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.a9f80a17.js",
+    "runtime-main.js.map": "/static/js/runtime-main.a9f80a17.js.map",
+    "static/css/2.3ef60d9d.chunk.css": "/static/css/2.3ef60d9d.chunk.css",
+    "static/js/2.fb63e582.chunk.js": "/static/js/2.fb63e582.chunk.js",
+    "static/js/2.fb63e582.chunk.js.map": "/static/js/2.fb63e582.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.3ef60d9d.chunk.css.map": "/static/css/2.3ef60d9d.chunk.css.map",
+    "static/css/main.19c930f1.chunk.css.map": "/static/css/main.19c930f1.chunk.css.map",
+    "static/js/2.fb63e582.chunk.js.LICENSE.txt": "/static/js/2.fb63e582.chunk.js.LICENSE.txt",
+    "static/media/Crousal.css": "/static/media/hirolaHeaderImg.57699cc7.jpg",
+    "static/media/EmptyCart.10414843.jpeg": "/static/media/EmptyCart.10414843.jpeg",
+    "static/media/bikeKustom.0bf27f5d.jpg": "/static/media/bikeKustom.0bf27f5d.jpg",
+    "static/media/kustomPartsLogo.d5c413ff.png": "/static/media/kustomPartsLogo.d5c413ff.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a9f80a17.js",
+    "static/css/2.3ef60d9d.chunk.css",
+    "static/js/2.fb63e582.chunk.js",
+    "static/css/main.19c930f1.chunk.css",
+    "static/js/main.d9e800b2.chunk.js"
+  ]
+}

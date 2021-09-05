@@ -1,0 +1,44 @@
+#product .spinActive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#process-page-spin {
+  display: none;
+}
+
+#product-component {
+  display: none;
+}
+
+#product .productActive {
+  display: inline;
+}
+
+.text-spin {
+  font-size: 25rem;
+  font-weight: 900;
+  color: #fec5bb;
+}
+
+@media screen and (max-width: 600px) {
+  .h-primary {
+    font-size: 1.2rem;
+  }
+
+  .cart-width {
+    width: 100%;
+  }
+  .mobile-image {
+    display: none;
+  }
+  .order {
+    width: 100%;
+  }
+  .text-spin {
+    font-size: 15rem;
+    font-weight: 900;
+    color: #fec5bb;
+  }
+}
