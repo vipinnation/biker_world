@@ -21,8 +21,7 @@ const Blog = () => {
                 <p className='text-base font-medium py-2'>
                     <span className='font-semibold'>Analytical Skills:</span> Do you need a lot of help solving a problem?
                     How correct is your solution?
-                    How long did it take you to come to a solution?
-                    If you had to design/architect a new solution, did you design the problem nicely and think through the transactions of different decisions?
+                    architect a new solution, did you design the problem nicely and think through the transactions of different decisions?
 
                 </p>
                 <p className='text-base font-medium py-2'>
