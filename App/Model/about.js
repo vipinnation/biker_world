@@ -10,7 +10,7 @@ const aboutSchema = new mongoose.Schema({
     message: {
         type: String
     }
-})
+}, { timestamps: true })
 
 
 module.exports = new mongoose.model('about', aboutSchema)

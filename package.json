@@ -1,7 +1,7 @@
 {
-  "name": "kustom parts",
+  "name": "hirola",
   "version": "1.0.0",
-  "description": "kustom parts : Biker bred , Bike baked",
+  "description": "Hirola :- Online Books Store",
   "main": "server.js",
   "scripts": {
     "start": " node server.js"
