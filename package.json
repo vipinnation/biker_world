@@ -1,7 +1,7 @@
 {
-  "name": "Kustom Parts",
+  "name": "kustom parts",
   "version": "1.0.0",
-  "description": "Kustom Parts : Biker bred , Bike baked",
+  "description": "kustom parts : Biker bred , Bike baked",
   "main": "server.js",
   "scripts": {
     "start": " node server.js"
