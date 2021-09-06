@@ -3,7 +3,7 @@ import '../../../node_modules/@glidejs/glide/dist/css/glide.core.min.css'
 import '../../../node_modules/@glidejs/glide/dist/css/glide.theme.min.css'
 import Glide from '@glidejs/glide'
 import '../../CSS/Crousal.css'
-import kustomParts from '../../Assets/Images/bikeKustom.jpg'
+import kustomParts from '../../Assets/Images/bike_art_kustomParts.jpg'
 
 
 const Crousal = () => {
