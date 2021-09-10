@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Helmet } from 'react-helmet'
-
+import { Helmet } from 'react-helmet' 
+ import ReactWhatsapp from 'react-whatsapp';  
+import FloatingWhatsApp from 'react-floating-whatsapp'
+import 'react-floating-whatsapp/dist/index.css'
 const AboutComponent = () => {
 
     const [about, setAbout] = useState({
@@ -29,6 +31,7 @@ const AboutComponent = () => {
         })
     }
 
+  
 
     return (
         <div>
@@ -52,8 +55,7 @@ const AboutComponent = () => {
                             Spare-parts is the core category of our store however we also provide some custom parts for your vehicle.
                             We will help you by providing accurate parts for your bike, accessories at fair prices, and free consultancy too.
                             <br />
-                            <br />
-                            We delivering books and other study material to your doorstep at minimal and pocket-friendly price
+                           
                         </p>
 
 
@@ -80,11 +82,6 @@ const AboutComponent = () => {
                         <div className="p-2 w-full pt-8   border-t border-gray-200 text-center">
 
                             <span className="inline-flex">
-                                <a className="text-gray-900" href='https://www.facebook.com/inkiyachotiya'>
-                                    <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
-                                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-                                    </svg>
-                                </a>
                                 <a className="ml-4 text-gray-900" href='https://www.instagram.com/kustomparts.in/'>
                                     <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
                                         <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
@@ -149,7 +146,10 @@ const AboutComponent = () => {
                 </form>
 
             </section>
-
+            <div className='w-1/4'>
+              <FloatingWhatsApp phoneNumber='919983809222' accountName='Kustom Parts' statusMessage='Have A Query'   />
+            </div>
+            
         </div>
     )
 }

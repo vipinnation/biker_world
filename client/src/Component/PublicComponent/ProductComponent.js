@@ -227,6 +227,8 @@ const ProductComponent = () => {
                                 {product.productPublisher && <span className='capitalize'>publisher : {product.productPublisher} <br /> </span>}
                                 {product.productEdition && <span className="capitalize">edition : {product.productEdition} <br /> </span>}
                                 {product.productLanguage && <span className='capitalize'> language : {product.productLanguage} </span>}
+                                {product.productApplicableModel && <span className='capitalize'> Applicable Model :  <ol className='list-decimal'>  
+                                {product.productApplicableModel.map(model => <li className='ml-4'> {model} </li>)}</ol> </span>}
 
                             </p>
 

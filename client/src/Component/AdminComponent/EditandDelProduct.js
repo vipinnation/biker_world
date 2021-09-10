@@ -55,7 +55,7 @@ const EditProduct = () => {
             <div class="bg-white shadow overflow-hidden sm:rounded-lg w-2/5 py-8  h-full mobile-width-auto">
                 <div class="px-4 py-5 sm:px-6 border-b flex justify-between">
                     <h3 class="text-lg leading-6 font-medium text-gray-900">
-                        Add Product
+                       Update  Product
                     </h3>
                 </div>
 
@@ -137,6 +137,17 @@ const EditProduct = () => {
                                 onChange={e => setProduct({ ...product, productSecondaryImage: e.target.value })}
                             />
                             <label for="name" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Secondary Image Link</label>
+                        </div>
+                        <div className="relative z-0 w-full mb-5 px-5">
+                            <input
+                                type="text"
+                                name="productApplicableModel"
+                                placeholder=" "
+                                className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
+                                value={product.productApplicableModel}
+                                onChange={e => setProduct({ ...product, productApplicableModel: e.target.value })}
+                            />
+                            <label for="name" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Applicable Model</label>
                         </div>
                         <div className="relative z-0 w-full mb-5 px-5">
                             <textarea

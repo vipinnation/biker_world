@@ -11,7 +11,8 @@ const AddProduct = () => {
     
     const [product, setProduct] = useState({
         productName: '', productPrice: '', productCategory: '', productDescription: '', productEdition: '', productPublisher: '',
-        productImage: '', productSecondaryImage: '', productPdf: '', productSearchingTags: '', productLanguage: '', productRegularPrice: '', productSlug: ''
+        productImage: '', productSecondaryImage: '', productPdf: '', productSearchingTags: '', productLanguage: '', productRegularPrice: '', productSlug: '',
+        productApplicableModel:''
     })
 
 
@@ -131,6 +132,17 @@ const AddProduct = () => {
                                 onChange={e => setProduct({ ...product, productSecondaryImage: e.target.value })}
                             />
                             <label for="name" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Secondary Image</label>
+                        </div>
+                        <div className="relative z-0 w-full mb-5 px-5">
+                            <input
+                                type="text"
+                                name="productApplicableModel"
+                                placeholder=" "
+                                className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
+                                value={product.productApplicableModel}
+                                onChange={e => setProduct({ ...product, productApplicableModel: e.target.value })}
+                            />
+                            <label for="name" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Applicable Model</label>
                         </div>
                         <div className="relative z-0 w-full mb-5 px-5">
                             <textarea

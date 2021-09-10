@@ -45,6 +45,9 @@ const productSchema = new mongoose.Schema({
     },
     productSlug: {
         type: String
+    },
+    productApplicableModel:{
+          type: Array
     }
 }, { timestamps: true })
 

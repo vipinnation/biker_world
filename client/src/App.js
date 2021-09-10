@@ -1,5 +1,8 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
+import FloatingWhatsApp from 'react-floating-whatsapp'
+import 'react-floating-whatsapp/dist/index.css'
+
 import LoginComponent from './Component/AuthComponent/LoginComponent';
 import SignupComponent from './Component/AuthComponent/SignupComponent';
 import CartComponent from './Component/PublicComponent/CartComponent';
@@ -34,6 +37,7 @@ import ShippingPolicy from './Component/PolicyComponent/ShippingPolicy';
 import PrivacyPolicy from './Component/PolicyComponent/PrivacyPolicy';
 import TermsAndCondition from './Component/PolicyComponent/TermsAndCondition';
 import ReturnPolicy from './Component/PolicyComponent/ReturnPolicy';
+import ReactChat from './Component/Utility/ReactChat'
 
 function App() {
   return (
@@ -95,7 +99,8 @@ function App() {
         <Route exact path="/test" component={Blog} />
 
         <Route path='*' component={NotFound} />
-      </Switch>
+      </Switch> 
+       <FloatingWhatsApp phoneNumber='917222040429' accountName='Kustom Parts' statusMessage='Have A Query'   />
       <Footer />
     </>
   );

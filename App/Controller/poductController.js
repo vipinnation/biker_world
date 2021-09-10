@@ -7,10 +7,10 @@ const productController = () => {
     return {
         /** Adding PRODUCT  in database */
         addProduct(req, res) {
-            console.log('Add product controller')
+            console.log('Add product controller',req.body.productApplicableModel)
 
             const secondaryImages = splitWords(req.body.productSecondaryImage)
-
+            const ApplicableModel = splitWords(req.body.productApplicableModel)
             console.log('Secondary Images ', secondaryImages)
             const addProduct = new Product({
                 productName: req.body.productName,
@@ -25,7 +25,8 @@ const productController = () => {
                 productEdition: req.body.productEdition,
                 productLanguage: req.body.productLanguage,
                 productRegularPrice: req.body.productRegularPrice,
-                productSlug: req.body.productSlug
+                productSlug: req.body.productSlug,
+                productApplicableModel:ApplicableModel
             });
 
             addProduct.save().then(data => {
@@ -67,9 +68,10 @@ const productController = () => {
         /** POST REQ for UPDATE PRODUCT by PRODUCT ID*/
         updateProduct(req, res) {
 
-            console.log('Update Product Controller')
+            console.log('Update Product Controller',req.body.productApplicableModel)
             const secondaryImages = splitWords(req.body.productSecondaryImage)
-
+            const ApplicableModel = splitWords(req.body.productApplicableModel)
+             
 
 
             const updateproduct = {
@@ -85,7 +87,8 @@ const productController = () => {
                 productEdition: req.body.productEdition,
                 productLanguage: req.body.productLanguage,
                 productRegularPrice: req.body.productRegularPrice,
-                productSlug: req.body.productSlug
+                productSlug: req.body.productSlug,
+                productApplicableModel:ApplicableModel
 
             }
 
@@ -132,8 +135,7 @@ const splitWords = (data) => {
     if (data == undefined) {
         console.log('undefined')
         return null
-
-    }
+   }
 
     console.log('Data', data.length)
     console.log('Data split ', data.split(','))
