@@ -16,8 +16,8 @@ const cartController = () => {
                     items: {},
                     referCode: req.body.referCode || null,
                     totalQty: 0,
-                    shippingCharge: Number(40),
-                    totalAmount: 40,
+                    shippingCharge: Number(50),
+                    totalAmount: 50,
                 }
             }
 

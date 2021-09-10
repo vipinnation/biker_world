@@ -69,7 +69,7 @@ const ProductSlider = (params) => {
                                     <div className="mt-4 mx-2">
                                         <h2 className="text-gray-900 title-font text-lg font-medium">{e.productName}</h2>
                                         <p className="mt-1 font-bold text-lg">₹ {e.productPrice}
-                                            <span className="text-red-500 relative -top-2 inline"> <del> {e.productRegularPrice} </del></span>
+                                            {(e.productPrice != e.productRegularPrice) ? (<span className="text-red-500 relative -top-2 inline"> <del> {e.productRegularPrice} </del></span>):null}
                                         </p>
                                     </div>
                                 </NavLink>

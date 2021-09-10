@@ -81,8 +81,11 @@ const AllProductComponent = () => {
                                 <div class="mt-4 mx-2">
                                     <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1 capitalize">{item.productCategory} </h3>
                                     <h2 class="text-gray-900 title-font text-lg font-medium">{item.productName} </h2>
-                                    <p class="mt-1 font-bold">Price: {item.productPrice}
-                                        <span className="text-red-500 relative -top-2 inline"> <del> {item.productRegularPrice} </del></span> </p>
+
+                                    {(item.productPrice != item.productRegularPrice ? (<span className="title-font font-medium text-2xl text-gray-900 ">Price: {item.productPrice}
+                                        <span className='relative -top-2 text-red-500'> <del className="text-lg"> {item.productRegularPrice}</del> </span>
+                                    </span>) : (<span className="title-font font-medium text-2xl text-gray-900 ">Price: {item.productPrice}</span>))}
+
                                 </div>
                                 <div class=" flex mt-1 w-94 mx-2">
                                 </div>

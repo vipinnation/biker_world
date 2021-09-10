@@ -227,8 +227,8 @@ const ProductComponent = () => {
                                 {product.productPublisher && <span className='capitalize'>publisher : {product.productPublisher} <br /> </span>}
                                 {product.productEdition && <span className="capitalize">edition : {product.productEdition} <br /> </span>}
                                 {product.productLanguage && <span className='capitalize'> language : {product.productLanguage} </span>}
-                                {product.productApplicableModel && <span className='capitalize'> Applicable Model :  <ol className='list-decimal'>  
-                                {product.productApplicableModel.map(model => <li className='ml-4'> {model} </li>)}</ol> </span>}
+                                {product.productApplicableModel && <span className='capitalize'> Applicable Model :  <ol className='list-decimal'>
+                                    {product.productApplicableModel.map(model => <li className='ml-4'> {model} </li>)}</ol> </span>}
 
                             </p>
 
@@ -256,7 +256,7 @@ const ProductComponent = () => {
                             </div>
                             <div className=" justify-space w-full">
                                 <span className="title-font font-medium text-2xl text-gray-900 ">Price: {product.productPrice}
-                                    <span className='relative -top-2 text-red-500'> <del className="text-lg"> {product.productRegularPrice}</del> </span>
+                                    {(product.productRegularPrice == product.productPrice) ? null : <span className='relative -top-2 text-red-500'> <del className="text-lg"> {product.productRegularPrice}</del> </span>}
                                 </span>
                                 <br />
                                 <div className="my-8">

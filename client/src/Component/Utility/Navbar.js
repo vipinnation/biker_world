@@ -60,7 +60,7 @@ const Navbar = () => {
                             className="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl mobileTag"
                             exact to="/"
                         >
-                            <img src={navbarLogo} alt="Hirola" width="120px" />
+                            <img src={navbarLogo} alt="Hirola" width="120px" className='mobile-logo'/>
                         </NavLink>
                     </div>
 
