@@ -21,6 +21,18 @@ const LinkButton = () => {
                     <div className="my-2">
                         <NavLink exact to='/category/chain lube' className='btn btn-primary px-2 rounded py-1'>Chain Lube</NavLink>
                     </div>
+                    <div className="my-2">
+                        <NavLink exact to='/category/horn' className='btn btn-primary px-2 rounded py-1'>Horn</NavLink>
+                    </div>
+                    <div className="my-2">
+                        <NavLink exact to='/category/passion pro' className='btn btn-primary px-1 rounded py-1'>Passion Pro</NavLink>
+                    </div>
+                    <div className="my-2">
+                        <NavLink exact to="/category/mastero edge" className='btn btn-primary px-2 rounded py-1'>Maestro</NavLink>
+                    </div>
+                    <div className="my-2">
+                        <NavLink exact to="/allproduct" className='btn btn-primary px-2 rounded py-1'>Products</NavLink>
+                    </div>
 
 
                 </div>

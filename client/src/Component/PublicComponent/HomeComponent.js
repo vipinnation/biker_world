@@ -29,6 +29,8 @@ const HomeComponent = () => {
             <ProductSlider name='helmet' titleName={'Helmet'} className='helmetSlider' />
             <ProductSlider name='chain clean' titleName={'Chain Clean'} className='chainCleanSLider' />
             <ProductSlider name='chain lube' titleName={'Chain Lube'} className='chainLubeSLider' />
+            <ProductSlider name='passion pro' titleName={'Hero Passion Pro'} className='passionProSLider' />
+            <ProductSlider name='mastero edge' titleName={'Hero Maestro Edge-125'} className='maestroEdge-125SLider' />
 
         </div>
     )

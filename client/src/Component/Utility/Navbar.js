@@ -5,11 +5,9 @@ import navbarLogo from '../../Assets/Images/kustomPartsLogo.png'
 
 import EngineeringDropdown from './EngineeringDropdown'
 import NCERTDropdown from './NCERTDropdown'
+import HeroDropdown from './HeroDropdown'
 
 const Navbar = () => {
-
-
-
 
     return (
         <div>
@@ -41,7 +39,9 @@ const Navbar = () => {
                                         exact to="/about"
                                     >About</NavLink>
                                 </li>
-
+                                <li>
+                                    <HeroDropdown />
+                                </li>
 
                                 <li>
                                     <NCERTDropdown />
@@ -49,6 +49,7 @@ const Navbar = () => {
                                 <li>
                                     <EngineeringDropdown />
                                 </li>
+
 
 
                             </ul>
@@ -60,7 +61,7 @@ const Navbar = () => {
                             className="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl mobileTag"
                             exact to="/"
                         >
-                            <img src={navbarLogo} alt="Hirola" width="120px" className='mobile-logo'/>
+                            <img src={navbarLogo} alt="Hirola" width="120px" className='mobile-logo' />
                         </NavLink>
                     </div>
 

@@ -54,6 +54,18 @@ const Footer = () => {
                             </nav>
                         </div>
                         <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+                            <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Hero</h2>
+                            <nav className="list-none mb-10">
+                                <li>
+                                    <a href="/category/passion pro" className="text-gray-600 hover:text-gray-800">Passin Pro</a>
+                                </li>
+                                <li>
+                                    <a href="/category/mastero edge" className="text-gray-600 hover:text-gray-800">Maestro Edge-125</a>
+                                </li>
+
+                            </nav>
+                        </div>
+                        <div className="lg:w-1/4 md:w-1/2 w-full px-4">
                             <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Other Useful links</h2>
                             <nav className="list-none mb-10">
                                 <li>
