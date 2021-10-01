@@ -1,6 +1,6 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import '../../CSS/navbar.css'
+import React, { useState } from 'react'
+import { NavLink, useHistory } from 'react-router-dom'
+import '../../Assets/CSS/navbar.css'
 import navbarLogo from '../../Assets/Images/kustomPartsLogo.png'
 
 import EngineeringDropdown from './EngineeringDropdown'
@@ -9,33 +9,55 @@ import HeroDropdown from './HeroDropdown'
 
 const Navbar = () => {
 
+    const [toggle, setToggle] = useState(false)
+    const [search, setSearch] = useState('')
+    const [searchDesktop, setSearchDesktop] = useState()
+    const history = useHistory()
+
+    const searchSubmit = () => {
+        history.push('/search/' + search)
+    }
+    const searchdesktopsubmit = () => {
+        history.push('/search/' + searchDesktop)
+    }
+
     return (
         <div>
-            <nav id="header" className="w-full z-30 top-0 py-1">
-                <div className="w-full container mx-auto flex flex-wrap justify-between mt-0 px-6 py-3">
-                    <label for="menu-toggle" className="cursor-pointer md:hidden block">
-                        <svg
-                            className="fill-current text-gray-900"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 20 20"
-                        >
-                            <title>menu</title>
-                            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-                        </svg>
-                    </label>
-                    <input className="hidden" type="checkbox" id="menu-toggle" />
+            <header>
+                <nav class="bg-gray-200 flex justify-between px-4 py-2 items-center cursor-pointer">
+                    <div class="w-1/5 flex items-center">
+                        <div class="m-desktop-none m-d-inline mx-1 text-lg">
+                            <i class="fa fa-bars" aria-hidden="true" onClick={() => { setToggle(!toggle) }}></i>
 
-                    <div className="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1" id="menu">
+                        </div>
+                        <NavLink exact to='/'> <img src={navbarLogo} alt="Kustom Parts" srcset="" class="img-logo-size" /></NavLink>
+                    </div>
+                    <div class="m-d-none ">
+                        <form onSubmit={searchdesktopsubmit}>
+                            <input type="text" class="px-72 py-2 rounded  neomorp text-black outline-none"
+                                placeholder="Search Your Product"
+                                onChange={e => (setSearchDesktop(e.target.value))}
+                                value={searchDesktop}
+                            /><i class="fa fa-search -ml-8  " aria-hidden="true"></i>
+                        </form>
+                    </div>
+                    <div class="flex">
+                        <NavLink exact to='/login'> <h2 class="px-2 text-3xl"><i class="fa fa-user " aria-hidden="true"></i></h2> </NavLink>
+                        <NavLink exact to='/cart'>  <h2 class="px-2 text-3xl"><i class="fa fa-shopping-cart " aria-hidden="true"></i></h2></NavLink>
+                    </div>
+
+                </nav>
+
+                {
+                    toggle && toggle == true ? (<div className='bg-gray-200 px-4 flex items-center mx-auto pb-1 m-desktop-none m-d-flex'>
                         <nav>
-                            <ul className="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
+                            <ul className="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0 bg-gray-200">
                                 <li>
-                                    <NavLink className="inline-flex  w-full  hover:bg-red-200 rounded-full hover-transition  shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700" exact to="/">Home</NavLink>
+                                    <NavLink className="inline-flex  w-full  hover:bg-red-200 rounded-full hover-transition  shadow-sm px-4 py-2  text-sm font-medium text-gray-700" exact to="/">Home</NavLink>
                                 </li>
                                 <li>
                                     <NavLink
-                                        className="inline-flex  w-full  hover:bg-red-200 rounded-full hover-transition  shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700"
+                                        className="inline-flex  w-full  hover:bg-red-200 rounded-full hover-transition  shadow-sm px-4 py-2  text-sm font-medium text-gray-700"
                                         exact to="/about"
                                     >About</NavLink>
                                 </li>
@@ -54,40 +76,22 @@ const Navbar = () => {
 
                             </ul>
                         </nav>
-                    </div>
+                    </div>) : null
+                }
 
-                    <div className="order-1 md:order-2 text-center -ml-44 mobile-navbar-logo">
-                        <NavLink
-                            className="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl mobileTag"
-                            exact to="/"
-                        >
-                            <img src={navbarLogo} alt="Hirola" width="120px" className='mobile-logo' />
-                        </NavLink>
-                    </div>
-
-                    <div className="order-2 md:order-3 flex items-center" id="nav-content">
-                        <NavLink className="inline-block no-underline hover:text-black hover:bg-red-200 rounded-full" exact to="/profile">
-                            <svg className="fill-current hover:text-black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <circle fill="none" cx="12" cy="7" r="3" />
-                                <path
-                                    d="M12 2C9.243 2 7 4.243 7 7s2.243 5 5 5 5-2.243 5-5S14.757 2 12 2zM12 10c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3S13.654 10 12 10zM21 21v-1c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1h2v-1c0-2.757 2.243-5 5-5h4c2.757 0 5 2.243 5 5v1H21z"
-                                />
-                            </svg>
-                        </NavLink>
-
-                        <NavLink className="pl-3 inline-block no-underline hover:text-black hover:bg-red-200 rounded-full" exact to="/cart">
-                            <svg className="fill-current hover:text-black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path
-                                    d="M21,7H7.462L5.91,3.586C5.748,3.229,5.392,3,5,3H2v2h2.356L9.09,15.414C9.252,15.771,9.608,16,10,16h8 c0.4,0,0.762-0.238,0.919-0.606l3-7c0.133-0.309,0.101-0.663-0.084-0.944C21.649,7.169,21.336,7,21,7z M17.341,14h-6.697L8.371,9 h11.112L17.341,14z"
-                                />
-                                <circle cx="10.5" cy="18.5" r="1.5" />
-                                <circle cx="17.5" cy="18.5" r="1.5" />
-                            </svg>
-                        </NavLink>
-
-                    </div>
+                <div class="bg-gray-200 px-4 flex items-center mx-auto pb-1 m-desktop-none m-d-flex">
+                    <form className='neomorph' onSubmit={searchSubmit}>
+                        <input type="text" class="rounded outline-none px-14 neomorp-search" placeholder="Search Your Product"
+                            value={search}
+                            onChange={e => (setSearch(e.target.value))}
+                        />
+                        <button type='submit'><i
+                            class="fa fa-search -ml-8 " aria-hidden="true"></i></button>
+                    </form>
                 </div>
-            </nav>
+
+
+            </header>
         </div>
     )
 }

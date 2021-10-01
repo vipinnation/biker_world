@@ -8,11 +8,11 @@ function classNames(...classes) {
 
 export default function NCERTDropdown() {
     return (
-        <Menu as="div" className="relative inline-block text-left">
+        <Menu as="div" className="relative flex-grow inline-block text-left">
             {({ open }) => (
                 <>
                     <div>
-                        <Menu.Button className="inline-flex justify-center w-full  hover:bg-red-200 rounded-full hover-transition  shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700">
+                        <Menu.Button className="inline-flex flex-grow justify-center w-full  hover:bg-red-200 rounded-full hover-transition  shadow-sm px-4 py-2  text-sm font-medium text-gray-700">
                             Engine Oil
                             <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
                         </Menu.Button>
@@ -30,7 +30,7 @@ export default function NCERTDropdown() {
                     >
                         <Menu.Items
                             static
-                            className="origin-top-right z-50  absolute  mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                            className="origin-top-right z-50 flex-grow absolute  mt-2 w-56 rounded-md shadow-lg  ring-1 ring-black ring-opacity-5 focus:outline-none"
                         >
                             <div className="py-1">
 

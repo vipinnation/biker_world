@@ -7,7 +7,7 @@ const productController = () => {
     return {
         /** Adding PRODUCT  in database */
         addProduct(req, res) {
-            console.log('Add product controller',req.body.productApplicableModel)
+            console.log('Add product controller', req.body.productApplicableModel)
 
             const secondaryImages = splitWords(req.body.productSecondaryImage)
             const ApplicableModel = splitWords(req.body.productApplicableModel)
@@ -26,7 +26,7 @@ const productController = () => {
                 productLanguage: req.body.productLanguage,
                 productRegularPrice: req.body.productRegularPrice,
                 productSlug: req.body.productSlug,
-                productApplicableModel:ApplicableModel
+                productApplicableModel: ApplicableModel
             });
 
             addProduct.save().then(data => {
@@ -68,10 +68,10 @@ const productController = () => {
         /** POST REQ for UPDATE PRODUCT by PRODUCT ID*/
         updateProduct(req, res) {
 
-            console.log('Update Product Controller',req.body.productApplicableModel)
+            console.log('Update Product Controller', req.body.productApplicableModel)
             const secondaryImages = splitWords(req.body.productSecondaryImage)
             const ApplicableModel = splitWords(req.body.productApplicableModel)
-             
+
 
 
             const updateproduct = {
@@ -88,7 +88,7 @@ const productController = () => {
                 productLanguage: req.body.productLanguage,
                 productRegularPrice: req.body.productRegularPrice,
                 productSlug: req.body.productSlug,
-                productApplicableModel:ApplicableModel
+                productApplicableModel: ApplicableModel
 
             }
 
@@ -132,16 +132,15 @@ const productController = () => {
 const splitWords = (data) => {
 
     console.log('Data Word', data)
-    if (data == undefined) {
+    if (data == undefined || !data ) {
         console.log('undefined')
-        return null
-   }
+        return 
+    }
 
-    console.log('Data', data.length)
-    console.log('Data split ', data.split(','))
-    const words = data.split(',')
-
-    return words
+    if (data) {
+        const words = data.split(',')
+        return words
+    }
 
 }
 

@@ -1,29 +1,31 @@
 {
   "files": {
-    "main.css": "/static/css/main.d5b55cc8.chunk.css",
-    "main.js": "/static/js/main.7f50b59e.chunk.js",
-    "main.js.map": "/static/js/main.7f50b59e.chunk.js.map",
+    "main.css": "/static/css/main.6f5c82be.chunk.css",
+    "main.js": "/static/js/main.95ad3d96.chunk.js",
+    "main.js.map": "/static/js/main.95ad3d96.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.a9f80a17.js",
     "runtime-main.js.map": "/static/js/runtime-main.a9f80a17.js.map",
     "static/css/2.e7021a92.chunk.css": "/static/css/2.e7021a92.chunk.css",
-    "static/js/2.dbc872c2.chunk.js": "/static/js/2.dbc872c2.chunk.js",
-    "static/js/2.dbc872c2.chunk.js.map": "/static/js/2.dbc872c2.chunk.js.map",
+    "static/js/2.3674105b.chunk.js": "/static/js/2.3674105b.chunk.js",
+    "static/js/2.3674105b.chunk.js.map": "/static/js/2.3674105b.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.e7021a92.chunk.css.map": "/static/css/2.e7021a92.chunk.css.map",
-    "static/css/main.d5b55cc8.chunk.css.map": "/static/css/main.d5b55cc8.chunk.css.map",
-    "static/js/2.dbc872c2.chunk.js.LICENSE.txt": "/static/js/2.dbc872c2.chunk.js.LICENSE.txt",
+    "static/css/main.6f5c82be.chunk.css.map": "/static/css/main.6f5c82be.chunk.css.map",
+    "static/js/2.3674105b.chunk.js.LICENSE.txt": "/static/js/2.3674105b.chunk.js.LICENSE.txt",
     "static/media/Crousal.css": "/static/media/hirolaHeaderImg.57699cc7.jpg",
     "static/media/EmptyCart.10414843.jpeg": "/static/media/EmptyCart.10414843.jpeg",
+    "static/media/Hero-logo.05b428e3.png": "/static/media/Hero-logo.05b428e3.png",
     "static/media/index.css": "/static/media/bg-chat-tile-light.7fff1c4f.png",
     "static/media/bike_art_kustomParts.f5b067c0.jpg": "/static/media/bike_art_kustomParts.f5b067c0.jpg",
     "static/media/kustomPartsLogo.d5c413ff.png": "/static/media/kustomPartsLogo.d5c413ff.png",
+    "static/media/motul logo.792e1c34.png": "/static/media/motul logo.792e1c34.png",
     "static/media/whatsapp.b1732bf4.svg": "/static/media/whatsapp.b1732bf4.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.a9f80a17.js",
     "static/css/2.e7021a92.chunk.css",
-    "static/js/2.dbc872c2.chunk.js",
-    "static/css/main.d5b55cc8.chunk.css",
-    "static/js/main.7f50b59e.chunk.js"
+    "static/js/2.3674105b.chunk.js",
+    "static/css/main.6f5c82be.chunk.css",
+    "static/js/main.95ad3d96.chunk.js"
   ]
 }

@@ -5,6 +5,7 @@ import '../../CSS/index.css'
 import ProductSlider from './ProductSlider'
 import LinkButton from '../Utility/LinkButton'
 import { Helmet } from 'react-helmet'
+import CategorySwiper from '../Utility/CategorySwiper'
 
 
 const HomeComponent = () => {
@@ -16,7 +17,9 @@ const HomeComponent = () => {
                 <title>Kustom Parts - Biker Bred , Bike Baked</title>
             </Helmet>
             <Crousal />
-            <SearchProduct />
+            <div className='mt-4'>
+                <CategorySwiper />
+            </div>
 
             <div >
                 <div className="w-3/5 mx-auto mobileCategory">
@@ -29,8 +32,8 @@ const HomeComponent = () => {
             <ProductSlider name='helmet' titleName={'Helmet'} className='helmetSlider' />
             <ProductSlider name='chain clean' titleName={'Chain Clean'} className='chainCleanSLider' />
             <ProductSlider name='chain lube' titleName={'Chain Lube'} className='chainLubeSLider' />
-            <ProductSlider name='passion pro' titleName={'Hero Passion Pro'} className='passionProSLider' />
-            <ProductSlider name='mastero edge' titleName={'Hero Maestro Edge-125'} className='maestroEdge-125SLider' />
+            {/* <ProductSlider name='passion pro' titleName={'Hero Passion Pro'} className='passionProSLider' />
+            <ProductSlider name='mastero edge' titleName={'Hero Maestro Edge-125'} className='maestroEdge-125SLider' /> */}
 
         </div>
     )
