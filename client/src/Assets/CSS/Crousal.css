@@ -6,8 +6,7 @@
   height: 50vh;
 }
 
-.backgroundImage1 {
-  background-image: url('../Images/1.jpg');
+.backgroundImage1 { 
   background-attachment: scroll;
 }
 .backgroundImage2 {
@@ -17,10 +16,7 @@
 .backgroundImage3 {
   background-image: url('https://images.unsplash.com/photo-1519327232521-1ea2c736d34d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80');
 }
-
-.backgroundImageHirola {
-  background-image: url('../Images//hirolaHeaderImg.jpg');
-}
+ 
 .imgBox {
   width: 50%;
 }

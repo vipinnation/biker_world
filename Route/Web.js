@@ -14,6 +14,7 @@ const updateCartController = require('../App/Controller/UpdateCartController');
 const addressController = require('../App/Controller/AddressController');
 const forgotPassword = require('../App/Controller/ForgotPassword');
 const referAndEarn = require('../App/Controller/ReferAndEarn');
+const CouponController = require('../App/Controller/CouponController')
 const route = express.Router();
 
 
@@ -21,6 +22,16 @@ const route = express.Router();
  *  ABOUT CONTROLLER
  *  */
 route.post('/feedback', AboutController().about)
+
+
+/**
+ *  Coupon Controller
+ */
+
+ route.post('/applycoupon', CouponController().applyUserCoupon)
+ route.post('/addcouponcode', checkLogin, CouponController().addCouponCode)
+ route.post('/getAdminCoupon', checkLogin, CouponController().getAdminCoupon)
+ route.post('/deleteadmincoupon', checkLogin, CouponController().deleteAdminCoupon)
 
 /**
  *  AUTH CONTROLLER

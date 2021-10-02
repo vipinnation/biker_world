@@ -3,7 +3,7 @@ import { NavLink, useHistory } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ProfileNavbar from './ProfileNavbar'
-import OrderPlaced from '../../Scripts/OrderPlaced'
+import OrderPlaced from '../../Assets/Scripts/OrderPlaced'
 import axios from 'axios'
 import Moment from 'react-moment'
 import { Cookies } from 'react-cookie'

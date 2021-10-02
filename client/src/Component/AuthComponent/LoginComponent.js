@@ -3,7 +3,7 @@ import { NavLink, useHistory } from 'react-router-dom'
 import { GoogleLogin } from 'react-google-login';
 import { Cookies } from 'react-cookie'
 import axios from 'axios'
-import '../../CSS/login.css'
+import '../../Assets/CSS/login.css'
 
 const cookie = new Cookies()
 const LoginComponent = () => {

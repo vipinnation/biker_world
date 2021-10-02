@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { NavLink, useHistory } from 'react-router-dom'
-import emptyCart from '../../Images/EmptyCart.jpeg'
+import emptyCart from '../../Assets/Images/EmptyCart.jpeg'
 import axios from 'axios'
-import '../../CSS/cart.css'
+import '../../Assets/CSS/cart.css'
 import { Helmet } from 'react-helmet'
+import CouponComponent from './CouponComponent'
 
 import { Cookies } from 'react-cookie'
 const cookie = new Cookies();
@@ -15,6 +16,7 @@ const CartComponent = () => {
     const [totalAmount, setTotalAmount] = useState('')
     const [totalQty, setTotalQty] = useState('')
     const [shippingCharge, setShippingCharge] = useState('')
+    const [couponCode, setCouponCode] = useState('')
 
     useEffect(async () => {
 
@@ -24,10 +26,11 @@ const CartComponent = () => {
             document.getElementById('product-component').classList.add('productActive')
             document.getElementById('process-page-spin').classList.remove('spinActive')
 
-
+            console.log(res.data)
             setTotalAmount(res.data.cart.totalAmount)
             setTotalQty(res.data.cart.totalQty)
             setShippingCharge(res.data.cart.shippingCharge)
+            setCouponCode(res.data.cart.couponCode)
         }).catch(err => {
             console.log(err)
         })
@@ -93,7 +96,7 @@ const CartComponent = () => {
                 {cartItem && cartItem.length ? <div className="order container mx-auto w-1/2 cart-width pt-2 pb-8">
 
                     <div className="flex  items-center border-b pb-4 pt-1 border-gray-300">
-                        <img src="img/cart-black.png" alt="" />
+                        <img src='' alt="" />
                         <h1 className="font-bold text-2xl ml-4 h-primary">Order Summary</h1>
                     </div>
                     <div className="pizza-list border-b border-gray-300 mx-5 ">
@@ -123,19 +126,29 @@ const CartComponent = () => {
                         </div>
                         )}
                     </div>
-                    <div className="mx-5">
+                    <div className="mx-5 flex justify-between m-d-block">
 
-                        <div className="text-right py-1">
-                            <span className="text-l">Total Quantity:-</span>
-                            <span className="text-l ml-2"> {totalQty} </span>
+                        <div className="py-1 mt-1">
+                            <CouponComponent couponCode={couponCode} />
                         </div>
-                        <div className="text-right py-1">
-                            <span className="text-l">Shipping Charge:-</span>
-                            <span className="text-l ml-2">₹  {shippingCharge} </span>
-                        </div>
-                        <div className="text-right py-1">
-                            <span className="text-l">Total Amount:-</span>
-                            <span className="text-l  ml-2"> ₹  {totalAmount} </span>
+
+                        <div className='py-1 mt-1 text-right'>
+                            <div className="py-1">
+                                <span className="text-l">Total Quantity:</span>
+                                <span className="text-l ml-2"> {totalQty} </span>
+                            </div>
+                            <div className="  py-1">
+                                <span className="text-l">Shipping Charge:</span>
+                                <span className="text-l ml-2">₹  {shippingCharge} </span>
+                            </div>
+                            {couponCode && <div className=" text-red-600  py-1">
+                                <span className="text-l">Discount Amount:</span>
+                                <span className="text-l ml-2">₹  {couponCode.discountAmount} </span>
+                            </div>}
+                            <div className="  py-1">
+                                <span className="text-l">Total Amount:</span>
+                                <span className="text-l  ml-2"> ₹  {totalAmount} </span>
+                            </div>
                         </div>
                     </div>
                     {cookie.get('auth-token') ? <div className="text-right">
@@ -156,7 +169,7 @@ const CartComponent = () => {
                         <h1 className="text-3xl font-bold mb-3  ">Cart is Empty</h1>
                         <p className="mb-5 text-gray-500 text-lg">You probably haven`t ordered yet . </p>
 
-                        <img className="w-2/5 mx-auto mb-3" src="" alt="" srcset="" />
+                        <img className="w-2/5 mx-auto mb-3" src={emptyCart} alt="" srcset="" />
 
 
                         <NavLink exact to="/" className="inline-block mx-auto">

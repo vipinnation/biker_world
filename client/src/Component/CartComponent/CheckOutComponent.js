@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Cookies } from 'react-cookie'
 import Razorpay from '../Utility/Razorpay';
 import { useHistory } from 'react-router-dom';
-import displayNotification from '../../Scripts/NoAddressNotification'
+import displayNotification from '../../Assets/Scripts/NoAddressNotification'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const cookie = new Cookies();

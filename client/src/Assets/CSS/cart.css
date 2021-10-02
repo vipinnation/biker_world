@@ -27,6 +27,9 @@
     font-size: 1.2rem;
   }
 
+  .m-d-block{
+    display: block;
+  }
   .cart-width {
     width: 100%;
   }

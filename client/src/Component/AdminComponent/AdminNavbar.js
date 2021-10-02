@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import '../../CSS/Profile.css'
+import '../../Assets/CSS/Profile.css'
 import { NavLink } from 'react-router-dom'
 import { Cookies } from 'react-cookie'
 const cookie = new Cookies()
@@ -21,7 +21,7 @@ const AdminNavbar = () => {
                     <ul className="text-gray-500 text-sm font-medium ">
 
                         <NavLink exact to='/admin'>
-                            <li className="mx-auto bg-gray-100  border border-green-800  hover:bg-green-200 p-4">
+                            <li className="mx-auto bg-gray-100  border border-green-800 hover:bg-green-200 p-4 shadow-xl">
                                 Dashboard
                             </li>
                         </NavLink>
@@ -45,7 +45,11 @@ const AdminNavbar = () => {
                                 Withdraw Request
                             </li>
                         </NavLink>
-
+                        <NavLink exact to='/admin/admincoupon'>
+                            <li className="mx-auto bg-gray-100 border border-green-800 hover:bg-green-200 p-4">
+                                Coupon
+                            </li>
+                        </NavLink>
 
 
                         <NavLink exact to='/login' onClick={logout}>
@@ -82,6 +86,11 @@ const AdminNavbar = () => {
                             <NavLink exact to='/admin/verifyreview'>
                                 <li className="mx-auto bg-gray-100 border border-green-800 hover:bg-green-200 p-4">
                                     Verify Review
+                                </li>
+                            </NavLink>
+                            <NavLink exact to='/admin/admincoupon'>
+                                <li className="mx-auto bg-gray-100 border border-green-800 hover:bg-green-200 p-4">
+                                    Coupon
                                 </li>
                             </NavLink>
                             <NavLink exact to='/admin/withdrawrequest'>

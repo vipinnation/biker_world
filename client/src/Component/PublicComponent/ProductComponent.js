@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import '../../../node_modules/@glidejs/glide/dist/css/glide.core.min.css'
 import '../../../node_modules/@glidejs/glide/dist/css/glide.theme.min.css'
 import Glide from '@glidejs/glide'
-import '../../CSS/Crousal.css'
+import '../../Assets/CSS/Crousal.css'
 
 
 const ProductComponent = () => {

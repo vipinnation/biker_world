@@ -13,8 +13,7 @@ const ProductSample = (params) => {
 
 
     useEffect(async () => {
-
-        console.log('NCERT IS HERRE' , params.name)
+ 
         await axios.get(`/api/product/category/${params.name}`).then(async (res) => {
 
             setProduct(res.data.product)

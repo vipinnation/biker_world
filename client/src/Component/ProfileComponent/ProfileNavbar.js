@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import '../../CSS/Profile.css'
+import '../../Assets/CSS/Profile.css'
 import axios from 'axios'
 import { NavLink } from 'react-router-dom'
 import { Cookies } from 'react-cookie'

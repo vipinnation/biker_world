@@ -3,19 +3,28 @@ import { Switch, Route } from 'react-router-dom'
 import FloatingWhatsApp from 'react-floating-whatsapp'
 import 'react-floating-whatsapp/dist/index.css'
 
+// Middleware
+import AdminRoute from './Middleware/AdminRoute';
+import PrivateRoute from './Middleware/PrivateRoute';
+
+// UI
+import Footer from "./UI/Footer";
+import Navbar from "./UI/Navbar";
+
+// Auth Routes
 import LoginComponent from './Component/AuthComponent/LoginComponent';
 import SignupComponent from './Component/AuthComponent/SignupComponent';
-import CartComponent from './Component/PublicComponent/CartComponent';
+
+
+import CartComponent from './Component/CartComponent/CartComponent';
+import CheckOutComponent from './Component/CartComponent/CheckOutComponent';
 
 import HomeComponent from "./Component/PublicComponent/HomeComponent";
 import ProductComponent from './Component/PublicComponent/ProductComponent';
-import Footer from "./Component/Utility/Footer";
-import Navbar from "./Component/Utility/Navbar";
+
 import OrderComponent from './Component/ProfileComponent/OrderComponent';
 import AdminComponent from './Component/AdminComponent/AdminComponent';
 import CategoryCompnent from './Component/PublicComponent/CategoryCompnent';
-import PrivateRoute from './Component/Utility/PrivateRoute';
-import AdminRoute from './Component/Utility/AdminRoute';
 import AddProduct from './Component/AdminComponent/AddProduct';
 import AdminProduct from './Component/AdminComponent/AdminProduct';
 import EditProduct, { DelProduct } from './Component/AdminComponent/EditandDelProduct'
@@ -26,7 +35,6 @@ import NotFound from './Component/Utility/NotFound';
 import AllProductComponent from './Component/PublicComponent/AllProductComponent';
 import Payment from './Component/Utility/Payment'
 import SearchResultComponent from './Component/PublicComponent/SearchResultComponent';
-import CheckOutComponent from './Component/PublicComponent/CheckOutComponent';
 import ForgotPassword from './Component/AuthComponent/ForgotPassword';
 import UpdateForgotpassword from './Component/AuthComponent/UpdateForgotpassword';
 import Blog from './Component/BlogComponent/Blog';
@@ -38,6 +46,7 @@ import PrivacyPolicy from './Component/PolicyComponent/PrivacyPolicy';
 import TermsAndCondition from './Component/PolicyComponent/TermsAndCondition';
 import ReturnPolicy from './Component/PolicyComponent/ReturnPolicy';
 import ReactChat from './Component/Utility/ReactChat'
+import AdminCoupon from './Component/AdminComponent/AdminCoupon';
 
 function App() {
   return (
@@ -76,6 +85,7 @@ function App() {
         <AdminRoute exact path='/admin/delproduct/:delProductId' component={DelProduct} />
         <AdminRoute exact path="/admin/verifyreview" component={VerifyReview} />
         <AdminRoute exact path="/admin/withdrawrequest" component={WithDrawRequest} />
+        <AdminRoute exact path="/admin/admincoupon" component={AdminCoupon} />
 
 
 
@@ -99,8 +109,8 @@ function App() {
         <Route exact path="/test" component={Blog} />
 
         <Route path='*' component={NotFound} />
-      </Switch> 
-       <FloatingWhatsApp phoneNumber='917222040429' accountName='Kustom Parts' statusMessage='Have A Query'   />
+      </Switch>
+      <FloatingWhatsApp phoneNumber='917222040429' accountName='Kustom Parts' statusMessage='Have A Query' />
       <Footer />
     </>
   );

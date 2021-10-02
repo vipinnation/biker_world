@@ -4,8 +4,8 @@ import axios from 'axios'
 import Moment from 'react-moment'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import toastError from '../../Scripts/ToastError';
-import toastSuccess from '../../Scripts/ToastSuccess';
+import toastError from '../../Assets/Scripts/ToastError';
+import toastSuccess from '../../Assets/Scripts/ToastSuccess';
 import { Cookies } from 'react-cookie'
 const cookie = new Cookies()
 
