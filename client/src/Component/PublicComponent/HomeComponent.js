@@ -17,9 +17,9 @@ const HomeComponent = () => {
                 <title>Kustom Parts - Biker Bred , Bike Baked</title>
             </Helmet>
             <Crousal />
-            <div className='mt-4'>
+            {/* <div className='mt-4'>
                 <CategorySwiper />
-            </div>
+            </div> */}
 
             <div >
                 <div className="w-3/5 mx-auto mobileCategory">

@@ -1,53 +1,62 @@
-import React, { useState } from 'react'
-import AdminNavbar from './AdminNavbar'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router';
+import AdminNavbar from './AdminNavbar'
+
 import { Cookies } from 'react-cookie'
 const cookie = new Cookies()
 
-const AddProduct = () => {
+
+const EditProductComponent = () => {
 
     const history = useHistory();
+    const [product, setProduct] = useState({});
+    const [msg, setMsg] = useState('');
+    const { editProductId } = useParams()
 
-    const [product, setProduct] = useState({
-        productName: '', productPrice: '', productCategory: '', productDescription: '', productEdition: '', productPublisher: '',
-        productImage: '', productSecondaryImage: '', productPdf: '', productSearchingTags: '', productLanguage: '', productRegularPrice: '', productSlug: '',
-        productApplicableModel: '', productSecondaryCategory: '', productPopularItem: ''
-    })
-
-
-    const [msg, setMsg] = useState('')
+    useEffect(() => {
 
 
-    const config = {
-        headers: {
-            'Content-Type': "application/json",
-            "Authorization": `Token ${cookie.get('auth-token')}`
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Token ${cookie.get('auth-token')}`
+            }
         }
-    }
+        document.title = "Edit Admin Product - Hirola : Online Bookstore"
+        axios.get(`/api/admin/editproduct/${editProductId}`, config).then(res => {
+            setProduct(res.data.product)
+        }).catch(err => {
+
+            console.log(err)
+        })
+    }, [])
+
     const submitHandler = e => {
         e.preventDefault();
 
 
-        axios.post('/api/admin/addproduct', product, config).then(res => {
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Token ${cookie.get('auth-token')}`
+            }
+        }
+        axios.post(`/api/admin/editproduct/${editProductId}`, product, config).then(res => {
+
             history.push('/admin/product')
         }).catch(err => {
-
             setMsg('Something Went Wrong')
-
-            setTimeout(() => {
-                setMsg('')
-            }, 8000);
+            console.log(err)
         })
     }
-
     return (
         <div className="bg-gray-100 py-8">
             <AdminNavbar />
             <div class="bg-white shadow overflow-hidden sm:rounded-lg w-2/5 py-8  h-full mobile-width-auto">
                 <div class="px-4 py-5 sm:px-6 border-b flex justify-between">
                     <h3 class="text-lg leading-6 font-medium text-gray-900">
-                        Add Product
+                        Update Product Details
                     </h3>
                 </div>
 
@@ -57,9 +66,6 @@ const AddProduct = () => {
 
                     <form id="form" method='POST' onSubmit={submitHandler} >
 
-                        <div>
-                            {msg && <div className="bg-yellow-500 rounded p-2 my-4 flex justify-content text-yellow-900" > <strong className="text-grey-200 mx-2">{msg}</strong></div>}
-                        </div>
                         <div className="relative z-0 w-full mb-5 px-5">
                             <input
                                 type="text"
@@ -84,7 +90,7 @@ const AddProduct = () => {
                                     value={product.productPrice}
                                     onChange={e => setProduct({ ...product, productPrice: e.target.value })}
                                 />
-                                <label for="name" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Product Price</label>
+                                <label for="name" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Our Price</label>
                             </div>
                             <div className="relative z-0 w-full mb-5 px-5">
                                 <input
@@ -96,7 +102,7 @@ const AddProduct = () => {
                                     value={product.productRegularPrice}
                                     onChange={e => setProduct({ ...product, productRegularPrice: e.target.value })}
                                 />
-                                <label for="name" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Product Regular Price</label>
+                                <label for="name" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Product MRP</label>
                             </div>
 
                         </div>
@@ -115,16 +121,25 @@ const AddProduct = () => {
                         <div className="relative z-0 w-full mb-5 px-5">
                             <input
                                 type="text"
-                                name="productSecondaryCategory"
+                                name="productImage"
                                 placeholder=" "
-                                required
                                 className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
                                 value={product.productSecondaryCategory}
                                 onChange={e => setProduct({ ...product, productSecondaryCategory: e.target.value })}
                             />
                             <label for="name" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Product Secondary Category</label>
                         </div>
-
+                        <div className="relative z-0 w-full mb-5 px-5">
+                            <input
+                                type="text"
+                                name="productApplicableModel"
+                                placeholder=" "
+                                className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
+                                value={product.productApplicableModel}
+                                onChange={e => setProduct({ ...product, productApplicableModel: e.target.value })}
+                            />
+                            <label for="name" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Product Applicable Model</label>
+                        </div>
                         <div className="relative z-0 w-full mb-5 px-5">
                             <input
                                 type="text"
@@ -138,6 +153,7 @@ const AddProduct = () => {
                             <label for="name" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Product Image Link</label>
                         </div>
                         <div className="relative z-0 w-full mb-5 px-5">
+
                             <input
                                 type="text"
                                 name="productSecondaryImage"
@@ -146,18 +162,7 @@ const AddProduct = () => {
                                 value={product.productSecondaryImage}
                                 onChange={e => setProduct({ ...product, productSecondaryImage: e.target.value })}
                             />
-                            <label for="name" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Secondary Image</label>
-                        </div>
-                        <div className="relative z-0 w-full mb-5 px-5">
-                            <input
-                                type="text"
-                                name="productApplicableModel"
-                                placeholder=" "
-                                className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
-                                value={product.productApplicableModel}
-                                onChange={e => setProduct({ ...product, productApplicableModel: e.target.value })}
-                            />
-                            <label for="name" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Applicable Model</label>
+                            <label for="name" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Secondary Image Link</label>
                         </div>
                         <div className="relative z-0 w-full mb-5 px-5">
                             <textarea
@@ -182,8 +187,22 @@ const AddProduct = () => {
                                     onChange={e => setProduct({ ...product, productPdf: e.target.value })}
 
                                 />
-                                <label for="name" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Product PDF</label>
+                                <label for="name" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Product PDF </label>
                             </div>
+                            <div className="relative z-0 w-full mb-5 px-5">
+                                <input
+                                    type="text"
+                                    name="productPdf"
+                                    placeholder=" "
+                                    className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
+                                    value={product.productPopularItem}
+                                    onChange={e => setProduct({ ...product, productPopularItem: e.target.value })}
+
+                                />
+                                <label for="name" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Pouplar Item</label>
+                            </div>
+                        </div>
+                        <div className='flex'>
                             <div className="relative z-0 w-full mb-5 px-5">
                                 <input
                                     type="text"
@@ -196,8 +215,6 @@ const AddProduct = () => {
                                 />
                                 <label for="name" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Product Edition</label>
                             </div>
-                        </div>
-                        <div className='flex'>
                             <div className="relative z-0 w-full mb-5 px-5">
                                 <input
                                     type="text"
@@ -210,18 +227,18 @@ const AddProduct = () => {
                                 />
                                 <label for="name" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Product Publisher</label>
                             </div>
-                            <div className="relative z-0 w-full mb-5 px-5">
-                                <input
-                                    type="text"
-                                    name="productLanguage"
-                                    placeholder=" "
-                                    className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
-                                    value={product.productLanguage}
-                                    onChange={e => setProduct({ ...product, productLanguage: e.target.value })}
+                        </div>
+                        <div className="relative z-0 w-full mb-5 px-5">
+                            <input
+                                type="text"
+                                name="productLanguage"
+                                placeholder=" "
+                                className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
+                                value={product.productLanguage}
+                                onChange={e => setProduct({ ...product, productLanguage: e.target.value })}
 
-                                />
-                                <label for="name" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Product Language </label>
-                            </div>
+                            />
+                            <label for="name" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Product Language </label>
                         </div>
                         <div className="relative z-0 w-full mb-5 px-5">
                             <input
@@ -233,33 +250,21 @@ const AddProduct = () => {
                                 onChange={e => setProduct({ ...product, productSearchingTags: e.target.value })}
 
                             />
-                            <label for="name" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Product Searching Tags</label>
+                            <label for="name" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Product Searching tags</label>
                         </div>
-                        <div className="relative z-0 w-full mb-5 px-5">
-                            <input
-                                type="text"
-                                name="productPopularItem"
-                                placeholder=" "
-                                className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
-                                value={product.productPopularItem}
-                                onChange={e => setProduct({ ...product, productPopularItem: e.target.value })}
-
-                            />
-                            <label for="name" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Product Popular Item</label>
-                        </div>
-
                         <div className="relative z-0 w-full mb-5 px-5">
                             <input
                                 type="text"
                                 name="productSlug"
                                 placeholder=" "
-                                required
                                 className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
                                 value={product.productSlug}
                                 onChange={e => setProduct({ ...product, productSlug: e.target.value })}
+
                             />
-                            <label for="name" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Product Slug Tag</label>
+                            <label for="name" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Product Slug</label>
                         </div>
+
 
 
 
@@ -269,7 +274,7 @@ const AddProduct = () => {
                                 type="submit"
                                 className="w-50 px-6 py-3 mt-3 text-lg text-white transition-all duration-150 ease-linear rounded-lg shadow outline-none btn-primary hover:shadow-lg focus:outline-none"
                             >
-                                Add Product
+                                Update Product
                             </button>
 
                         </div>
@@ -278,7 +283,8 @@ const AddProduct = () => {
 
             </div>
         </div>
+
     )
 }
 
-export default AddProduct
+export default EditProductComponent

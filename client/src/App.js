@@ -26,8 +26,7 @@ import OrderComponent from './Component/ProfileComponent/OrderComponent';
 import AdminComponent from './Component/AdminComponent/AdminComponent';
 import CategoryCompnent from './Component/PublicComponent/CategoryCompnent';
 import AddProduct from './Component/AdminComponent/AddProduct';
-import AdminProduct from './Component/AdminComponent/AdminProduct';
-import EditProduct, { DelProduct } from './Component/AdminComponent/EditandDelProduct'
+import AdminProduct from './Component/AdminComponent/AdminProduct'; 
 import AboutComponent from './Component/PublicComponent/AboutComponent';
 import OrderStatus from './Component/ProfileComponent/OrderStatus';
 import VerifyReview from './Component/AdminComponent/VerifyReview';
@@ -47,6 +46,8 @@ import TermsAndCondition from './Component/PolicyComponent/TermsAndCondition';
 import ReturnPolicy from './Component/PolicyComponent/ReturnPolicy';
 import ReactChat from './Component/Utility/ReactChat'
 import AdminCoupon from './Component/AdminComponent/AdminCoupon';
+import EditProductComponent from './Component/AdminComponent/EditProductComponent';
+import DeleteProductComponent from './Component/AdminComponent/DeleteProductComponent';
 
 function App() {
   return (
@@ -81,8 +82,8 @@ function App() {
         <AdminRoute exact path="/admin" component={AdminComponent} />
         <AdminRoute exact path='/admin/addproduct' component={AddProduct} />
         <AdminRoute exact path='/admin/product' component={AdminProduct} />
-        <AdminRoute exact path='/admin/editproduct/:editProductId' component={EditProduct} />
-        <AdminRoute exact path='/admin/delproduct/:delProductId' component={DelProduct} />
+        <AdminRoute exact path='/admin/editproduct/:editProductId' component={EditProductComponent} />
+        <AdminRoute exact path='/admin/delproduct/:delProductId' component={DeleteProductComponent} />
         <AdminRoute exact path="/admin/verifyreview" component={VerifyReview} />
         <AdminRoute exact path="/admin/withdrawrequest" component={WithDrawRequest} />
         <AdminRoute exact path="/admin/admincoupon" component={AdminCoupon} />
