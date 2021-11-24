@@ -6,6 +6,7 @@ import ProductSlider from './ProductSlider'
 import LinkButton from '../Utility/LinkButton'
 import { Helmet } from 'react-helmet'
 import CategorySwiper from '../Utility/CategorySwiper'
+import CategoryCircleSwiper from '../SwiperComponent/CategoryCircleSwiper'
 
 
 const HomeComponent = () => {
@@ -16,6 +17,7 @@ const HomeComponent = () => {
             <Helmet>
                 <title>Kustom Parts - Biker Bred , Bike Baked</title>
             </Helmet>
+            <CategoryCircleSwiper />
             <Crousal />
             {/* <div className='mt-4'>
                 <CategorySwiper />

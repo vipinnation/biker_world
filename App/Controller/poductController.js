@@ -11,11 +11,14 @@ const productController = () => {
 
             const secondaryImages = splitWords(req.body.productSecondaryImage)
             const ApplicableModel = splitWords(req.body.productApplicableModel)
-            console.log('Secondary Images ', secondaryImages)
+            const secondaryCategory = splitWords(req.body.productSecondaryCategory)
+
             const addProduct = new Product({
                 productName: req.body.productName,
                 productPrice: req.body.productPrice,
                 productCategory: req.body.productCategory,
+                productSecondaryCategory: secondaryCategory,
+                productRegularPrice: req.body.productRegularPrice,
                 productDescription: req.body.productDescription,
                 productImage: req.body.productImage,
                 productSecondaryImage: secondaryImages,
@@ -24,9 +27,9 @@ const productController = () => {
                 productPublisher: req.body.productPublisher,
                 productEdition: req.body.productEdition,
                 productLanguage: req.body.productLanguage,
-                productRegularPrice: req.body.productRegularPrice,
                 productSlug: req.body.productSlug,
-                productApplicableModel: ApplicableModel
+                productApplicableModel: ApplicableModel,
+                productPopularItem: req.body.productPopularItem
             });
 
             addProduct.save().then(data => {
@@ -71,13 +74,16 @@ const productController = () => {
             console.log('Update Product Controller', req.body.productApplicableModel)
             const secondaryImages = splitWords(req.body.productSecondaryImage)
             const ApplicableModel = splitWords(req.body.productApplicableModel)
+            const secondaryCategory = splitWords(req.body.productSecondaryCategory)
 
 
 
             const updateproduct = {
                 productName: req.body.productName,
                 productPrice: req.body.productPrice,
+                productRegularPrice: req.body.productRegularPrice,
                 productCategory: req.body.productCategory,
+                productSecondaryCategory: secondaryCategory,
                 productDescription: req.body.productDescription,
                 productImage: req.body.productImage,
                 productSecondaryImage: secondaryImages,
@@ -86,9 +92,9 @@ const productController = () => {
                 productPublisher: req.body.productPublisher,
                 productEdition: req.body.productEdition,
                 productLanguage: req.body.productLanguage,
-                productRegularPrice: req.body.productRegularPrice,
                 productSlug: req.body.productSlug,
-                productApplicableModel: ApplicableModel
+                productApplicableModel: ApplicableModel,
+                productPopularItem: req.body.productPopularItem
 
             }
 
@@ -130,14 +136,16 @@ const productController = () => {
 
 
 const splitWords = (data) => {
-
     console.log('Data Word', data)
-    if (data == undefined || !data ) {
+    if (data == undefined && data == '') {
         console.log('undefined')
-        return 
+        return null
+
     }
 
-    if (data) {
+    if (data && data.length > 1) {
+        console.log('Data Length', data.length)
+        console.log('Data split ', data.split(','))
         const words = data.split(',')
         return words
     }

@@ -26,7 +26,7 @@ import OrderComponent from './Component/ProfileComponent/OrderComponent';
 import AdminComponent from './Component/AdminComponent/AdminComponent';
 import CategoryCompnent from './Component/PublicComponent/CategoryCompnent';
 import AddProduct from './Component/AdminComponent/AddProduct';
-import AdminProduct from './Component/AdminComponent/AdminProduct'; 
+import AdminProduct from './Component/AdminComponent/AdminProduct';
 import AboutComponent from './Component/PublicComponent/AboutComponent';
 import OrderStatus from './Component/ProfileComponent/OrderStatus';
 import VerifyReview from './Component/AdminComponent/VerifyReview';
@@ -48,6 +48,8 @@ import ReactChat from './Component/Utility/ReactChat'
 import AdminCoupon from './Component/AdminComponent/AdminCoupon';
 import EditProductComponent from './Component/AdminComponent/EditProductComponent';
 import DeleteProductComponent from './Component/AdminComponent/DeleteProductComponent';
+import CategoryListComponent from './Component/Category/CategoryListComponent';
+import ShopByBrandComponent from './Component/Utility/ShopByBrandComponent';
 
 function App() {
   return (
@@ -64,6 +66,7 @@ function App() {
         <Route exact path='/search/:id' component={SearchResultComponent} />
 
         <Route exact path='/allproduct' component={AllProductComponent} />
+        <Route exact path='/shopbybrand' component={ShopByBrandComponent} />
 
         {/*Auth Routes */}
         <Route exact path="/signup" component={SignupComponent} />
@@ -88,7 +91,8 @@ function App() {
         <AdminRoute exact path="/admin/withdrawrequest" component={WithDrawRequest} />
         <AdminRoute exact path="/admin/admincoupon" component={AdminCoupon} />
 
-
+        {/** Category Component */}
+        <Route exact path='/categorylist' component={CategoryListComponent} />
 
         {/* Product Route */}
         <Route exact path="/product/:id" component={ProductComponent} />

@@ -13,6 +13,9 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    productSecondaryCategory: {
+        type: Array 
+    },
     productDescription: {
         type: String,
 
@@ -46,8 +49,11 @@ const productSchema = new mongoose.Schema({
     productSlug: {
         type: String
     },
-    productApplicableModel:{
-          type: Array
+    productApplicableModel: {
+        type: Array
+    },
+    productPopularItem: {
+        type: Boolean
     }
 }, { timestamps: true })
 
