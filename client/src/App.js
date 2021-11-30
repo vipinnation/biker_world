@@ -8,8 +8,8 @@ import AdminRoute from './Middleware/AdminRoute';
 import PrivateRoute from './Middleware/PrivateRoute';
 
 // UI
-import Footer from "./UI/Footer";
-import Navbar from "./UI/Navbar";
+import Footer from "./Component/UI/Footer";
+import Navbar from "./Component/UI/Navbar";
 
 // Auth Routes
 import LoginComponent from './Component/AuthComponent/LoginComponent';

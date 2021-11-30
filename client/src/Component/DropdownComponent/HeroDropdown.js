@@ -6,14 +6,15 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function EngineeringDropdown() {
+
+const HeroDropdown = () => {
     return (
-        <Menu as="div" className="relative inline-block text-left">
+        <Menu as="div" className="relative inline-block text-left bg-gray-200">
             {({ open }) => (
                 <>
                     <div>
-                        <Menu.Button className="inline-flex justify-center w-full  hover:bg-red-200 rounded-full hover-transition  shadow-sm px-4 py-2  text-sm font-medium text-gray-700">
-                            Spare Parts
+                        <Menu.Button className="inline-flex justify-center w-full bg-gray-200  hover:bg-red-200 rounded-full hover-transition  shadow-sm px-4 py-2  text-sm font-medium text-gray-700">
+                            Hero
                             <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
                         </Menu.Button>
                     </div>
@@ -30,38 +31,34 @@ export default function EngineeringDropdown() {
                     >
                         <Menu.Items
                             static
-                            className="origin-top-right z-50 absolute  mt-2 w-56 rounded-md shadow-lg  ring-1 ring-black ring-opacity-5 focus:outline-none"
+                            className="origin-top-right z-50 bg-gray-200 absolute  mt-2 w-56 rounded-md shadow-lg  ring-1 ring-black ring-opacity-5 focus:outline-none"
                         >
                             <div className="py-1">
+
                                 <Menu.Item>
                                     {({ active }) => (
-                                        <a
-                                            href="/category/chain clean"
+                                        <a href="/category/passion pro"
                                             className={classNames(
                                                 active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                                 'block px-4 py-2 text-sm'
                                             )}
                                         >
-                                            Chain Cleaner
+                                            Passion Pro
                                         </a>
                                     )}
                                 </Menu.Item>
                                 <Menu.Item>
                                     {({ active }) => (
-                                        <a
-                                            href="/category/chain lube"
+                                        <a href="/category/mastero edge"
                                             className={classNames(
                                                 active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                                 'block px-4 py-2 text-sm'
                                             )}
                                         >
-                                            Chain Lube
+                                            Maestro Edge-125
                                         </a>
                                     )}
                                 </Menu.Item>
-
-
-
                             </div>
                         </Menu.Items>
                     </Transition>
@@ -70,3 +67,5 @@ export default function EngineeringDropdown() {
         </Menu>
     )
 }
+
+export default HeroDropdown

@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { NavLink, useHistory } from 'react-router-dom'
-import '../Assets/CSS/navbar.css'
-import navbarLogo from '../Assets/Images/kustomPartsLogo.png'
+import '../../Assets/CSS/navbar.css'
+import navbarLogo from '../../Assets/Images/kustomPartsLogo.png'
 
-import EngineeringDropdown from '../Component/Utility/EngineeringDropdown'
-import NCERTDropdown from '../Component/Utility/NCERTDropdown'
-import HeroDropdown from '../Component/Utility/HeroDropdown'
+import EngineeringDropdown from '../DropdownComponent/EngineeringDropdown'
+import NCERTDropdown from '../DropdownComponent/NCERTDropdown'
+import HeroDropdown from '../DropdownComponent/HeroDropdown'
 
 const Navbar = () => {
 
@@ -62,14 +62,7 @@ const Navbar = () => {
                                     >About</NavLink>
                                 </li>
                                 <li>
-                                    <HeroDropdown />
-                                </li>
-
-                                <li>
                                     <NCERTDropdown />
-                                </li>
-                                <li>
-                                    <EngineeringDropdown />
                                 </li>
 
 

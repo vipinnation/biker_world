@@ -1,30 +1,36 @@
 {
   "files": {
-    "main.css": "/static/css/main.5e8205ef.chunk.css",
-    "main.js": "/static/js/main.b021ec2d.chunk.js",
-    "main.js.map": "/static/js/main.b021ec2d.chunk.js.map",
+    "main.css": "/static/css/main.3724313d.chunk.css",
+    "main.js": "/static/js/main.bff00721.chunk.js",
+    "main.js.map": "/static/js/main.bff00721.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.a9f80a17.js",
     "runtime-main.js.map": "/static/js/runtime-main.a9f80a17.js.map",
     "static/css/2.315379ec.chunk.css": "/static/css/2.315379ec.chunk.css",
-    "static/js/2.21f593ab.chunk.js": "/static/js/2.21f593ab.chunk.js",
-    "static/js/2.21f593ab.chunk.js.map": "/static/js/2.21f593ab.chunk.js.map",
+    "static/js/2.adffaf4d.chunk.js": "/static/js/2.adffaf4d.chunk.js",
+    "static/js/2.adffaf4d.chunk.js.map": "/static/js/2.adffaf4d.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.315379ec.chunk.css.map": "/static/css/2.315379ec.chunk.css.map",
-    "static/css/main.5e8205ef.chunk.css.map": "/static/css/main.5e8205ef.chunk.css.map",
-    "static/js/2.21f593ab.chunk.js.LICENSE.txt": "/static/js/2.21f593ab.chunk.js.LICENSE.txt",
+    "static/css/main.3724313d.chunk.css.map": "/static/css/main.3724313d.chunk.css.map",
+    "static/js/2.adffaf4d.chunk.js.LICENSE.txt": "/static/js/2.adffaf4d.chunk.js.LICENSE.txt",
     "static/media/EmptyCart.10414843.jpeg": "/static/media/EmptyCart.10414843.jpeg",
-    "static/media/Hero-logo.05b428e3.png": "/static/media/Hero-logo.05b428e3.png",
+    "static/media/all_categories.c8352c95.png": "/static/media/all_categories.c8352c95.png",
     "static/media/index.css": "/static/media/bg-chat-tile-light.7fff1c4f.png",
     "static/media/bike_art_kustomParts.f5b067c0.jpg": "/static/media/bike_art_kustomParts.f5b067c0.jpg",
+    "static/media/chain_cleaner.303a14b4.png": "/static/media/chain_cleaner.303a14b4.png",
+    "static/media/chain_lube.e3f6c5cb.png": "/static/media/chain_lube.e3f6c5cb.png",
+    "static/media/engine_oil.c8e49f53.png": "/static/media/engine_oil.c8e49f53.png",
+    "static/media/helmet.8d776172.png": "/static/media/helmet.8d776172.png",
+    "static/media/horns.6405baee.png": "/static/media/horns.6405baee.png",
     "static/media/kustomPartsLogo.d5c413ff.png": "/static/media/kustomPartsLogo.d5c413ff.png",
-    "static/media/motul logo.792e1c34.png": "/static/media/motul logo.792e1c34.png",
+    "static/media/leather_bags.c3ec2de4.png": "/static/media/leather_bags.c3ec2de4.png",
+    "static/media/shop_by_brands.a7ed469c.png": "/static/media/shop_by_brands.a7ed469c.png",
     "static/media/whatsapp.b1732bf4.svg": "/static/media/whatsapp.b1732bf4.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.a9f80a17.js",
     "static/css/2.315379ec.chunk.css",
-    "static/js/2.21f593ab.chunk.js",
-    "static/css/main.5e8205ef.chunk.css",
-    "static/js/main.b021ec2d.chunk.js"
+    "static/js/2.adffaf4d.chunk.js",
+    "static/css/main.3724313d.chunk.css",
+    "static/js/main.bff00721.chunk.js"
   ]
 }

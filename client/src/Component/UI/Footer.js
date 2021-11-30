@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../Assets/Images/kustomPartsLogo.png'
+import logo from '../../Assets/Images/kustomPartsLogo.png'
 import { NavLink } from 'react-router-dom'
 
 const Footer = () => {
