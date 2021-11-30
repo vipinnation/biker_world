@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.3724313d.chunk.css",
-    "main.js": "/static/js/main.bff00721.chunk.js",
-    "main.js.map": "/static/js/main.bff00721.chunk.js.map",
+    "main.js": "/static/js/main.cd36d7d3.chunk.js",
+    "main.js.map": "/static/js/main.cd36d7d3.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.a9f80a17.js",
     "runtime-main.js.map": "/static/js/runtime-main.a9f80a17.js.map",
     "static/css/2.315379ec.chunk.css": "/static/css/2.315379ec.chunk.css",
@@ -18,6 +18,7 @@
     "static/media/bike_art_kustomParts.f5b067c0.jpg": "/static/media/bike_art_kustomParts.f5b067c0.jpg",
     "static/media/chain_cleaner.303a14b4.png": "/static/media/chain_cleaner.303a14b4.png",
     "static/media/chain_lube.e3f6c5cb.png": "/static/media/chain_lube.e3f6c5cb.png",
+    "static/media/crousalPic.60a64b30.jpg": "/static/media/crousalPic.60a64b30.jpg",
     "static/media/engine_oil.c8e49f53.png": "/static/media/engine_oil.c8e49f53.png",
     "static/media/helmet.8d776172.png": "/static/media/helmet.8d776172.png",
     "static/media/horns.6405baee.png": "/static/media/horns.6405baee.png",
@@ -31,6 +32,6 @@
     "static/css/2.315379ec.chunk.css",
     "static/js/2.adffaf4d.chunk.js",
     "static/css/main.3724313d.chunk.css",
-    "static/js/main.bff00721.chunk.js"
+    "static/js/main.cd36d7d3.chunk.js"
   ]
 }
