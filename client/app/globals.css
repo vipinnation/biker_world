@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  scroll-behavior: smooth;
+}
+
+.maxWidth-1600 {
+  max-width: 1600px;
+}
+
+.h-50vh {
+  height: 50vh;
+}
+
+.backgroundImage1 {
+  background-attachment: scroll;
+}
+.backgroundImage2 {
+  background-image: url("https://www.bing.com/images/search?view=detailV2&ccid=wj0nNT4h&id=A003A343EF2F1662B134288F07018F6E101E0940&thid=OIP.wj0nNT4hzhN39C-GWxyTvAHaE9&mediaurl=https%3a%2f%2f4.bp.blogspot.com%2f-uBIbx2r_z_M%2fUFkTkfxC7EI%2fAAAAAAAAQoo%2ffqgy4OreRWA%2fs1600%2fDusky%2bDolphins5.jpg&exph=1071&expw=1600&q=Dolphins&simid=608015258649457852&ck=82AAC125CEE5EFC6E5B7E895A539D357&selectedIndex=0&FORM=IRPRST&ajaxhist=0&ajaxserp=0");
+}
+
+.backgroundImage3 {
+  background-image: url("https://images.unsplash.com/photo-1519327232521-1ea2c736d34d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80");
+}
+
+.imgBox {
+  width: 50%;
+}
+
+.glide_arrows_customs {
+  top: 250px;
+  position: relative;
+}
+
+#product .spinActive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#process-page-spin {
+  display: none;
+}
+
+#product-component {
+  display: none;
+}
+
+#product .productActive {
+  display: inline;
+}
+
+.text-spin {
+  font-size: 25rem;
+  font-weight: 900;
+  color: #fec5bb;
+}
+
+@media screen and (max-width: 600px) {
+  .text-spin {
+    font-size: 15rem;
+    font-weight: 900;
+    color: #fec5bb;
+  }
+
+  .mobile-height-crousal {
+    height: auto;
+  }
+}
+
+.-z-1 {
+  z-index: -1;
+}
+
+.origin-0 {
+  transform-origin: 0%;
+}
+
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label,
+textarea:focus ~ label,
+textarea:not(:placeholder-shown) ~ label,
+select:focus ~ label,
+select:not([value=""]):valid ~ label {
+  /* @apply transform; scale-75; -translate-y-6; */
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  --tw-scale-x: 0.75;
+  --tw-scale-y: 0.75;
+  --tw-translate-y: -1.5rem;
+}
+
+input:focus ~ label,
+select:focus ~ label {
+  /* @apply text-black; left-0; */
+  --tw-text-opacity: 1;
+  color: rgba(0, 0, 0, var(--tw-text-opacity));
+  left: 0px;
+}
+
+#login-spin-inside {
+  display: none;
+}
+
+#login-spin .active {
+  display: inline;
+}
+
+#login-box-spin {
+  transition: 0.5s;
+  display: none;
+}
