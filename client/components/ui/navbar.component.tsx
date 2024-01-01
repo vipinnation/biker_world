@@ -23,7 +23,7 @@ const NavbarComponent = (props: Props) => {
 
   return (
     <header>
-      <nav className="bg-primary flex items-center justify-between px-4 pt-2 pb-1 shadow-lg ">
+      <nav className="bg-primary flex items-center justify-between px-4 pt-2 pb-1 shadow-lg fixed z-50 ">
         <div className="w-1/5 flex items-center">
           <div className="m-desktop-none m-d-inline mx-1 text-lg">
             <i

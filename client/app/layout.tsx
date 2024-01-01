@@ -17,7 +17,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <NavbarComponent />
-        {children}
+        <div>
+          <div className="pb-[3.80rem]"></div>
+          {children}
+        </div>
       </body>
     </html>
   );
