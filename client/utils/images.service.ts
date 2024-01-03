@@ -12,6 +12,8 @@ import main_1 from "../assets/images/crousal/main_1.jpg";
 import main_2 from "../assets/images/crousal/main_2.jpg";
 import main_3 from "../assets/images/crousal/main_3.jpg";
 
+import emptycart from "../assets/images/empty_cart.png";
+
 const images = {
   logo,
   category: {
@@ -25,6 +27,7 @@ const images = {
     shop_by_brands,
   },
   crousal: { main_1, main_2, main_3 },
+  cart: { emptycart },
 };
 
 export default images;

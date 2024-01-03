@@ -2,6 +2,7 @@ import NavbarComponent from "@/components/ui/navbar.component";
 import type { Metadata } from "next";
 import "./globals.css";
 import "../node_modules/@glidejs/glide/dist/css/glide.core.min.css";
+import FooterComponent from "@/components/ui/footer.component";
 
 export const metadata: Metadata = {
   title: "KustomParts",
@@ -21,6 +22,7 @@ export default function RootLayout({
           <div className="pb-[3.80rem]"></div>
           {children}
         </div>
+        <FooterComponent />
       </body>
     </html>
   );
