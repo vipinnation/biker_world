@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "../node_modules/@glidejs/glide/dist/css/glide.core.min.css";
 import FooterComponent from "@/components/ui/footer.component";
+import { FaWhatsapp } from "react-icons/fa";
 
 export const metadata: Metadata = {
   title: "KustomParts",
@@ -19,10 +20,16 @@ export default function RootLayout({
       <body>
         <NavbarComponent />
         <div>
-          <div className="pb-[3.80rem]"></div>
+          <div className="pb-[4.75rem] lg:pb-[3.80rem]"></div>
           {children}
         </div>
         <FooterComponent />
+
+        <div className="flex items-end justify-end fixed bottom-0 right-0 mb-4 mr-4 z-10">
+          <div className="bg-white rounded-md">
+            <FaWhatsapp className="text-green-600 text-3xl " />
+          </div>
+        </div>
       </body>
     </html>
   );

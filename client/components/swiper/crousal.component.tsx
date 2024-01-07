@@ -1,8 +1,11 @@
 "use client";
 import images from "@/utils/images.service";
 import Glide from "@glidejs/glide";
-import Link from "next/link";
 import React, { useEffect, useRef } from "react";
+import {
+  FaRegArrowAltCircleLeft,
+  FaRegArrowAltCircleRight,
+} from "react-icons/fa";
 
 const CrousalComponent = () => {
   const ref = useRef<any>();
@@ -25,48 +28,40 @@ const CrousalComponent = () => {
   return (
     <div className="glide " ref={ref}>
       <div className="glide__track" data-glide-el="track">
-        <div className="glide__slides ">
+        <div className="glide__slides h-[11rem] sm:h-full">
           <div className="glide__slide ">
-            <div className="flex flex-col w-full lg:w-1/2 md:ml-16 items-center justify-center md:items-start  tracking-wide">
-              <img src={images.crousal.main_2.src} className="max-w-[150%]" />
+            <div className="flex flex-col w-full md:items-start  tracking-wide  sm:h-full">
+              <img
+                src={images.crousal.main_2.src}
+                className="w-full h-full sm:h-[20rem]"
+              />
             </div>
           </div>
           <div className="glide__slide ">
-            <div className="flex flex-col w-full lg:w-1/2 md:ml-16 items-center  justify-center  md:items-start  tracking-wide">
-              <img src={images.crousal.main_3.src} className="max-w-[150%]" />
+            <div className="flex flex-col w-full md:items-start  tracking-wide  sm:h-full">
+              <img
+                src={images.crousal.main_3.src}
+                className="w-full h-full sm:h-[20rem]"
+              />
             </div>
           </div>
-          {/* <div className="glide__slide ">
-            <div>
-              <img src={images.crousal.main_3.src} />
-            </div>
-          </div> */}
-          {/* <div className="glide__slide ">
-            <div className="block  w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover  ">
-              <div className="container mx-auto">
-                <div className="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-16  tracking-wide">
-                  <img src={images.crousal.main_2.src} />
-                </div>
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
-      <div className="glide__arrows" data-glide-el="controls">
+      <div
+        className="glide__arrows flex items-center justify-between relative bottom-[5rem] sm:bottom-[10rem] px-2 bg-transparent"
+        data-glide-el="controls"
+      >
         <button
-          className="glide__arrow glide__arrow--left hover:bg-gray-200"
+          className="glide__arrow glide__arrow--left rounded-lg hover:bg-gray-200"
           data-glide-dir="<"
         >
-          <i className="fa fa-chevron-left text-black " aria-hidden="true"></i>
+          <FaRegArrowAltCircleLeft className=" text-black text-3xl" />
         </button>
         <button
-          className="glide__arrow glide__arrow--right hover:bg-gray-200"
+          className="glide__arrow glide__arrow--right rounded-lg hover:bg-gray-200"
           data-glide-dir=">"
         >
-          <i
-            className="fa fa-chevron-right text-black  "
-            aria-hidden="true"
-          ></i>
+          <FaRegArrowAltCircleRight className=" text-black text-3xl" />
         </button>
       </div>
     </div>

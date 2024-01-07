@@ -1,3 +1,4 @@
+import Button from "@/components/ui/button.component";
 import Link from "next/link";
 import React from "react";
 
@@ -6,9 +7,9 @@ type Props = {};
 const SignupPage = (props: Props) => {
   return (
     <>
-      <div className="bg-gray-900 flex items-center justify-center h-[91vh]">
+      <div className="bg-gray-900 flex items-center justify-center h-[91vh] px-2 sm:px-0">
         <div
-          className="bg-gray-100 text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden"
+          className="bg-gray-100 text-gray-500 rounded-md  sm:rounded-3xl shadow-xl w-full overflow-hidden"
           style={{ maxWidth: "1000px" }}
         >
           <div className="md:flex w-full">
@@ -206,9 +207,7 @@ const SignupPage = (props: Props) => {
                   </div>
                 </div>
                 <div className="w-full mt-4 mb-3">
-                  <button className="block w-full mx-auto bg-primary hover:bg-violet-400  text-black rounded-lg p-3 font-semibold">
-                    Signup
-                  </button>
+                  <Button title="Signup" />
                 </div>
               </div>
 

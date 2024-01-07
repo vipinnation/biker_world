@@ -7,6 +7,14 @@
 * {
   font-family: "Jura", sans-serif;
   font-family: "Playfair Display", serif;
+
+  box-sizing: border-box;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
 }
 body {
   scroll-behavior: smooth;
@@ -38,24 +46,6 @@ body {
 .glide_arrows_customs {
   top: 250px;
   position: relative;
-}
-
-#product .spinActive {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#process-page-spin {
-  display: none;
-}
-
-#product-component {
-  display: none;
-}
-
-#product .productActive {
-  display: inline;
 }
 
 .text-spin {
@@ -112,15 +102,21 @@ select:focus ~ label {
   left: 0px;
 }
 
-#login-spin-inside {
-  display: none;
+.logo-anime {
+  animation-name: fadeout;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
 }
 
-#login-spin .active {
-  display: inline;
-}
-
-#login-box-spin {
-  transition: 0.5s;
-  display: none;
+@keyframes fadeout {
+  0%,
+  25%,
+  75% {
+    opacity: 0;
+  }
+  50%,
+  100% {
+    opacity: 1;
+  }
 }

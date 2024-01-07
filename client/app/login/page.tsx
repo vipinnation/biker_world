@@ -1,14 +1,15 @@
+import Button from "@/components/ui/button.component";
 import Link from "next/link";
 import React from "react";
+import { FaEye, FaLock } from "react-icons/fa";
+import { FaMessage } from "react-icons/fa6";
 
-type Props = {};
-
-const LoginPage = (props: Props) => {
+const LoginPage = () => {
   return (
     <>
-      <div className="bg-gray-900 flex items-center justify-center h-[91vh]">
+      <div className="bg-gray-900 flex items-center justify-center h-[91vh] px-2 sm:px-0">
         <div
-          className="bg-gray-100 text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden"
+          className="bg-gray-100 text-gray-500  rounded-md sm:rounded-3xl shadow-xl w-full overflow-hidden"
           style={{ maxWidth: "1000px" }}
         >
           <div className="md:flex w-full">
@@ -148,7 +149,7 @@ const LoginPage = (props: Props) => {
                 />
               </svg>
             </div>
-            <div className="w-full md:w-1/2 py-10 px-5 md:px-10">
+            <div className="w-full md:w-1/2 py-3 sm:py-6 px-2 sm:py-10 sm:px-5 md:px-10">
               <div className="text-center mb-3">
                 <h1 className="font-bold text-3xl text-gray-900">Login</h1>
                 <p>Enter your information to login</p>
@@ -161,7 +162,7 @@ const LoginPage = (props: Props) => {
                     </label>
                     <div className="flex">
                       <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
-                        <i className="mdi mdi-email-outline text-gray-400 text-lg"></i>
+                        <FaMessage />
                       </div>
                       <input
                         type="email"
@@ -178,7 +179,7 @@ const LoginPage = (props: Props) => {
                     </label>
                     <div className="flex">
                       <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
-                        <i className="mdi mdi-lock-outline text-gray-400 text-lg"></i>
+                        <FaLock />
                       </div>
                       <input
                         type="password"
@@ -189,9 +190,7 @@ const LoginPage = (props: Props) => {
                   </div>
                 </div>
                 <div className="w-full mt-4 mb-3">
-                  <button className="block w-full mx-auto bg-primary hover:bg-violet-400  text-black rounded-lg p-3 font-semibold">
-                    Login
-                  </button>
+                  <Button title="Login" type="submit" />
                 </div>
               </div>
 
@@ -207,22 +206,6 @@ const LoginPage = (props: Props) => {
           </div>
         </div>
       </div>
-
-      {/* <div className="flex items-end justify-end fixed bottom-0 right-0 mb-4 mr-4 z-10">
-        <div>
-          <a
-            title="Buy me a beer"
-            href="https://www.buymeacoffee.com/scottwindon"
-            target="_blank"
-            className="block w-16 h-16 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12"
-          >
-            <img
-              className="object-cover object-center w-full h-full rounded-full"
-              src="https://i.pinimg.com/originals/60/fd/e8/60fde811b6be57094e0abc69d9c2622a.jpg"
-            />
-          </a>
-        </div>
-      </div> */}
     </>
   );
 };

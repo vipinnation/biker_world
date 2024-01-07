@@ -3,7 +3,7 @@ import images from "@/utils/images.service";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import { FaUserCircle, FaSearch } from "react-icons/fa";
+import { FaUserCircle, FaSearch, FaBars } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa6";
 
 type Props = {};
@@ -23,19 +23,17 @@ const NavbarComponent = (props: Props) => {
 
   return (
     <header>
-      <nav className="bg-primary flex items-center justify-between px-4 pt-2 pb-1 shadow-lg fixed z-50 ">
-        <div className="w-1/5 flex items-center">
-          <div className="m-desktop-none m-d-inline mx-1 text-lg">
-            <i
-              className="fa fa-bars"
-              aria-hidden="true"
-              onClick={() => {
-                setToggle(!toggle);
-              }}
-            ></i>
+      <nav className="bg-primary flex items-center justify-between px-2 sm:px-4 pt-2 pb-1 shadow-lg fixed z-50 ">
+        <div className="w-1/3 sm:w-1/5 flex items-center">
+          <div className="sm:hidden">
+            <FaBars className="text-xl text-white mr-2" />
           </div>
           <Link href="/">
-            <img src={images.logo.src} alt="Kustom Parts" className="w-1/2" />
+            <img
+              src={images.logo.src}
+              alt="Kustom Parts"
+              className="w-full sm:w-1/2"
+            />
           </Link>
         </div>
         <div className="hidden sm:block">
@@ -57,12 +55,12 @@ const NavbarComponent = (props: Props) => {
         </div>
         <div className="flex text-white mr-3 items-center">
           <Link href="/login" className="mx-4 text-white">
-            <span className="text-3xl hover:text-gray-300">
+            <span className="text-xl sm:text-3xl hover:text-gray-300">
               <FaUserCircle />
             </span>
           </Link>
           <Link href="/cart">
-            <span className="text-3xl hover:text-gray-300">
+            <span className="text-xl sm:text-3xl hover:text-gray-300">
               <FaCartPlus />
             </span>
           </Link>
@@ -95,17 +93,20 @@ const NavbarComponent = (props: Props) => {
         </div>
       ) : null}
 
-      <div className="bg-gray-200 px-4 flex items-center mx-auto pb-1 sm:hidden">
-        <form className="neomorph" onSubmit={searchSubmit}>
+      <div className="bg-gray-200 flex items-center mx-auto pb-1 sm:hidden fixed w-full z-10">
+        <form
+          className="neomorph mt-11 flex w-full px-2"
+          onSubmit={searchSubmit}
+        >
           <input
             type="text"
-            className="rounded outline-none px-14 neomorp-search"
+            className="rounded outline-none px-3 neomorp-search w-full py-1"
             placeholder="Search Your Product"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
-          <button type="submit">
-            <i className="fa fa-search -ml-8 " aria-hidden="true"></i>
+          <button type="submit" className="bg-white px-1 rounded-md">
+            <FaSearch />
           </button>
         </form>
       </div>

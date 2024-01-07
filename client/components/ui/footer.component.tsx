@@ -6,7 +6,7 @@ type Props = {};
 
 const FooterComponent = (props: Props) => {
   return (
-    <footer className="bg-white mt-3">
+    <footer className="bg-white">
       <div className="container mx-auto px-8 bg-gray-200">
         <div className="w-full flex flex-col md:flex-row py-6">
           <div className="flex-1 mb-6 text-black">
@@ -19,7 +19,7 @@ const FooterComponent = (props: Props) => {
                 alt="Kustom Parts"
                 className="w-1/2 inline"
               />
-            </Link>{" "}
+            </Link>
             <br />
             <span>Biker Bred, Bike Baked</span>
           </div>
