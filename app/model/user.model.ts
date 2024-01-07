@@ -11,12 +11,6 @@ const validateEmail = function (email: any) {
 
 const UserSchema: Schema = new Schema<any>(
     {
-        first_name: {
-            type: String,
-            trim: true,
-            required: [true, 'First is required']
-        },
-        last_name: { type: String, trim: true },
         email: {
             type: String,
             required: true,
@@ -27,18 +21,9 @@ const UserSchema: Schema = new Schema<any>(
             match: [/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/, 'Please fill a valid email address']
         },
         password: { type: String, required: true, select: false },
-        is_verified: { type: Boolean, default: false },
-        is_blocked: { type: Boolean, default: false },
-        is_deleted: { type: Boolean, default: false },
         last_logged_in: { type: Date, default: null },
-        avatar: { type: String, default: '' },
-        status: { type: String, default: 'A', enum: ['A', 'I'] },
+        status: { type: String, default: 'ROLE_USER', enum: ['ROLE_USER', 'ROLE_ADMIN'] },
         created_by: { type: Schema.Types.ObjectId, ref: 'user' },
-        login_history: {
-            select: false,
-            type: [{ login_time: { type: Date }, logout_time: { type: Date }, isCleared: { type: Boolean, default: false } }],
-        },
-        token: { type: String, select: false }
 
     },
     { timestamps: true }

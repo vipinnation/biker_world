@@ -8,7 +8,7 @@ import Logger from './library/logger';
 import ActivityTracker from './app/middleware/activity-tracker';
 import UnderMaintenanceValidator from './app/middleware/maintenance-mode';
 import routes from './routes';
-import redis from './redis/_init.redis';
+// import redis from './redis/_init.redis';
 import db from './db';
 dotenv.config();
 
@@ -42,14 +42,14 @@ const port = process.env.PORT || 5000;
 export const server = http.createServer(app);
 
 server.listen(port, () => {
-    Logger.info(`⚡️ Server is running at http://localhost:${port} on process no ${process.pid}  === ${process.env.MONGO_USERNAME}`);
+    Logger.info(`⚡️ Server is running at http://localhost:${port}`);
 });
 
 
 process.on('SIGINT', async () => {
     server.close(async () => {
         await db.connection.close();
-        await redis.quit();
+        // await redis.quit();
         process.exit(0);
     });
 });
@@ -57,7 +57,7 @@ process.on('SIGINT', async () => {
 process.on('SIGTERM', async () => {
     server.close(async () => {
         await db.connection.close();
-        await redis.quit();
+        // await redis.quit();
         process.exit(0);
     });
 
