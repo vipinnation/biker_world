@@ -1,15 +1,18 @@
-import React from "react";
-import { FaHome, FaUser } from "react-icons/fa";
+import UserLayout from '@/components/layout/user.layout';
+import Head from 'next/head';
+import React from 'react';
 
 const DashboardPage = () => {
   return (
-    <div>
-      <div className="bg-purple-100 py-8 border">
+    <UserLayout>
+      <Head>
+        <title>My page title</title>
+        <meta property="og:title" content="My page title" key="title" />
+      </Head>
+      <div className="bg-purple-100 py-8 border w-full">
         <div className="bg-white shadow overflow-hidden sm:rounded-lg w-2/5  order py-8 mx-auto h-full">
           <div className="px-4 py-5 sm:px-6 border-b flex justify-between">
-            <h1 className="text-lg leading-6 font-medium text-gray-900">
-              Ordered Item
-            </h1>
+            <h1 className="text-lg leading-6 font-medium text-gray-900">Ordered Item</h1>
           </div>
 
           <div>
@@ -42,24 +45,17 @@ const DashboardPage = () => {
             </div>
 
             <div className="mx-auto px-8 border-b my-2">
-              <span className="text-green-400 font-bold text-l">
-                Shipping Charge :
-              </span>
+              <span className="text-green-400 font-bold text-l">Shipping Charge :</span>
               <span>40</span>
               <br />
-              <span className="text-green-400 font-bold text-l">
-                Total Amount :
-              </span>
+              <span className="text-green-400 font-bold text-l">Total Amount :</span>
               <span>40</span>
             </div>
 
             <div className="mx-auto px-8 border-b my-2">
               <h2 className="text-green-400 font-bold text-l">Shipping To</h2>
               <p>User Name</p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Architecto, sunt.{" "}
-              </p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, sunt. </p>
               <p>City , State</p>
               <p>305022</p>
               <p>Mobile :524525</p>
@@ -70,7 +66,7 @@ const DashboardPage = () => {
           </div>
         </div>
       </div>
-    </div>
+    </UserLayout>
   );
 };
 
